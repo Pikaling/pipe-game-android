@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "uk.co.plasmabeamgames.pipegame"
+        minSdkVersion 17
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile 'proguard-guava.pro'
+            proguardFile 'proguard-rules.pro'
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+        debug {
+            debuggable true
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/animation_frames/corner_pipe',
+                    'src/main/res/animation_frames/corner_pipe_flipped',
+                    'src/main/res/animation_frames/cross_pipe',
+                    'src/main/res/animation_frames/cross_pipe_one_full',
+                    'src/main/res/animation_frames/liquid_spill',
+                    'src/main/res/animation_frames/sink_pipe',
+                    'src/main/res/animation_frames/source_pipe',
+                    'src/main/res/animation_frames/straight_pipe',
+                    'src/main/res/animation_frames',
+                    'src/main/res'
+            ]
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.google.guava:guava:18.0'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+    compile 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:1.7.1'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+}

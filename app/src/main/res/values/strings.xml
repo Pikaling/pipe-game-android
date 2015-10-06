@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PipeGame</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="score_label">Score:</string>
+    <string name="delay_label">Liquid Start Delay:</string>
+    <string name="duration_label">Frame Duration:</string>
+    <string name="pause_status_label">Is paused?</string>
+    <string name="run_time_label">Level Timer:</string>
+    <string name="game_over">Game Over</string>
+    <string name="reset">Start a new game</string>
+    <string name="exit">Exit to menu</string>
+    <string name="level_complete">Level Complete</string>
+    <string name="next_level">Next level</string>
+    <string name="level_label">Level:</string>
+</resources>
